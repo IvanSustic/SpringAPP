@@ -1,0 +1,28 @@
+<h2>Unos</h2>
+  <form [formGroup]="reviewFormGroup" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="naslov">Code:</label>
+      <input type="text" id="naslov" formControlName="naslov">
+      <div *ngIf="reviewFormGroup.get('naslov').invalid && reviewFormGroup.get('naslov').touched">
+        Naslov is required.
+      </div>
+    </div>
+    <div>
+      <label for="tekst">Tekst:</label>
+      <input type="text" id="tekst" formControlName="tekst">
+      <div *ngIf="reviewFormGroup.get('tekst').invalid && reviewFormGroup.get('tekst').touched">
+        Tekst is required.
+      </div>
+    </div>
+    <div>
+      <label for="ocjena">Ocjena:</label>
+      <input type="number" id="ocjena" formControlName="ocjena" >
+      <div *ngIf="reviewFormGroup.get('ocjena').invalid && reviewFormGroup.get('ocjena').touched">
+        Ocjena is required.
+      </div>
+    </div>
+   
+
+  
+    <button type="submit" [disabled]="reviewFormGroup.invalid">Submit</button>
+  </form>

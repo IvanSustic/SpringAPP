@@ -1,0 +1,67 @@
+
+<router-outlet></router-outlet>
+<app-navbar></app-navbar>
+<div class="container" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center">Detalji o "{{registration}}"</h3>
+<h2>Unos</h2>
+  <form [formGroup]="carForm" >
+   
+    <div>
+      <label for="maxPassengers">Max passengers:</label>
+      <input type="number" id="maxPassengers" formControlName="maxPassengers">
+      <div *ngIf="carForm.get('maxPassengers').invalid && carForm.get('maxPassengers').touched">
+        Gearbox is required.
+      </div>
+    </div>
+    <div>
+      <label for="gearBox">Gearbox:</label>
+      <input type="text" id="gearBox" formControlName="gearBox" >
+      <div *ngIf="carForm.get('gearBox').invalid && carForm.get('gearBox').touched">
+        Gearbox is required.
+      </div>
+    </div>
+    <div>
+      <label for="airConditioning">Air Conditioning:</label>
+      <input type="checkbox" id="airConditioning" formControlName="airConditioning">
+    </div>
+    <div>
+      <label for="doors">Doors:</label>
+      <input type="number" id="doors" formControlName="doors">
+      <div *ngIf="carForm.get('doors').invalid && carForm.get('doors').touched">
+        Doors are required.
+      </div>
+    </div>
+   
+    <div>
+      <label for="fuel">Fuel:</label>
+      <input type="text" id="fuel" formControlName="fuel">
+      <div *ngIf="carForm.get('fuel').invalid && carForm.get('fuel').touched">
+        Fuel is required.
+      </div>
+    </div>
+    <div>
+      <label for="mileage">Mileage:</label>
+      <input type="number" id="mileage" formControlName="mileage">
+      <div *ngIf="carForm.get('mileage').invalid && carForm.get('mileage').touched">
+        Doors are required.
+      </div>
+    </div>
+    <div>
+      <label for="registration">Registration:</label>
+      <input type="text" id="registration" formControlName="registration">
+      <div *ngIf="carForm.get('registration').invalid && carForm.get('registration').touched">
+        Gearbox is required.
+      </div>
+    </div>
+    <div>
+      <label for="chassisNumber">Chassis Number:</label>
+      <input type="text" id="chassisNumber" formControlName="chassisNumber">
+      <div *ngIf="carForm.get('chassisNumber').invalid && carForm.get('chassisNumber').touched">
+        Gearbox is required.
+      </div>
+    </div>
+
+  </form>
+  <br>
+  <br>
+ 

@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h2 class="mb-3 text-center">Popis Vozila</h2>
+    <table class="table table-bordered">
+      
+      <tbody>
+        <tr *ngFor="let vozilo of Vozila">
+          <td (click)="fetchVozilo( vozilo.registration)">{{ vozilo.registration }}</td>
+          <td>{{ vozilo.chassisNumber }}</td>
+          <button (click)="deleteCar(vozilo.registration)">X</button>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+<br>
+<br>
+<div class="container" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center" *ngIf="show">Detalji o "{{vozilo.registration}}"</h3>
+    <p *ngIf="show" >Max broj putnika: {{vozilo.maxPassengers}}</p>
+    <p *ngIf="show">Mjenjač: {{vozilo.gearBox}}</p>
+    <p *ngIf="show">Klima: {{vozilo.airConditioning}}</p>
+    <p *ngIf="show">Broj vrata: {{vozilo.doors}}</p>
+    <p *ngIf="show">Gorivo: {{vozilo.fuel}}</p>
+    <p *ngIf="show">Novo: {{vozilo.newForSale}}</p>
+
+</div>
+
+
+  <router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h2 class="mb-3 text-center">Popis Vozila</h2>
+    <div>
+      <label for="regSearch">Registracija:</label>
+      <input type="text" id="regSearch" [(ngModel)]="reg" (change)="filter()">
+  
+      <div>
+        <div>
+          <label for="fuelSearch">Gorivo:</label>
+          <input type="text" id="fuelSearch"   [(ngModel)]="fuel"  (change)="filter()" >
+          <div>
+    <table class="table table-bordered">
+      
+      <tbody>
+        <tr *ngFor="let vozilo of Vozila">
+          <td routerLink="/voziloUser/{{vozilo.registration}}">{{ vozilo.registration }}</td>
+          <td>{{ vozilo.chassisNumber }}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+  </div>
+<br>
+
+  <router-outlet></router-outlet>
